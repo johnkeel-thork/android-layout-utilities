@@ -12,12 +12,12 @@ SwipeListViewTouchListener touchListener =
             new SwipeListViewTouchListener.OnSwipeCallback() {
                 @Override
                 public void onSwipeLeft(ListView listView, int [] reverseSortedPositions) {
-                    // DO YOUR STUFF HERE
+                    // DO YOUR STUFF HERE - Get item position with reverseSortedPositions[0]
                 }
 
                 @Override
                 public void onSwipeRight(ListView listView, int [] reverseSortedPositions) {
-                    // DO YOUR STUFF HERE
+                    // DO YOUR STUFF HERE - Get item position with reverseSortedPositions[0]
                 }
             }, false, false);
 

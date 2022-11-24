@@ -22,13 +22,13 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
 
     // Fixed properties
     private final View mView;
-    private final SwipeViewTouchListener.OnSwipeCallback mCallback;
+    private final OnSwipeCallback mCallback;
     private int mViewWidth = 1;
     private boolean dismissLeft = true;
     private boolean dismissRight = true;
 
     // Transient properties
-    private final List<SwipeViewTouchListener.PendingSwipeData> mPendingSwipes = new ArrayList<>();
+    private final List<PendingSwipeData> mPendingSwipes = new ArrayList<>();
     private int mDismissAnimationRefCount = 0;
     private float mDownX;
     private boolean mSwiping;
@@ -204,7 +204,7 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
         return false;
     }
 
-    static class PendingSwipeData implements Comparable <SwipeViewTouchListener.PendingSwipeData> {
+    static class PendingSwipeData implements Comparable <PendingSwipeData> {
         public int position;
         public View view;
 
@@ -214,7 +214,7 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
         }
 
         @Override
-        public int compareTo(SwipeViewTouchListener.PendingSwipeData other) {
+        public int compareTo(PendingSwipeData other) {
             // Sort by descending position
             return other.position - position;
         }
@@ -254,7 +254,7 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
                     }
 
 
-                    for (SwipeViewTouchListener.PendingSwipeData pendingDismiss: mPendingSwipes) {
+                    for (PendingSwipeData pendingDismiss: mPendingSwipes) {
                         // Reset view presentation
                         ViewGroup.LayoutParams lp;
                         if (pendingDismiss.view != null) {
@@ -276,7 +276,7 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
             swipeView.setLayoutParams(lp);
         });
 
-        mPendingSwipes.add(new SwipeViewTouchListener.PendingSwipeData(swipePosition, swipeView));
+        mPendingSwipes.add(new PendingSwipeData(swipePosition, swipeView));
         animator.start();
     }
 }

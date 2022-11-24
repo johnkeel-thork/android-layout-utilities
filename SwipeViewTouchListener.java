@@ -46,12 +46,10 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
          * Called when the user has swiped the view item to the left.
          *
          * @param view               The originating {@link View}.
-         * @param reverseSortedPositions An array of positions to dismiss, sorted in descending
-         *                               order for convenience.
          */
-        void onSwipeLeft(View view, int[] reverseSortedPositions);
+        void onSwipeLeft(View view);
 
-        void onSwipeRight(View view, int[] reverseSortedPositions);
+        void onSwipeRight(View view);
     }
 
     /**
@@ -248,15 +246,11 @@ public class SwipeViewTouchListener implements View.OnTouchListener {
                     // Sort by descending position
                     Collections.sort(mPendingSwipes);
 
-                    int[] swipePositions = new int[mPendingSwipes.size()];
-                    for (int i = mPendingSwipes.size() - 1; i >= 0; i--) {
-                        swipePositions[i] = mPendingSwipes.get(i).position;
-                    }
                     if (swipeRight) {
-                        mCallback.onSwipeRight(mView, swipePositions);
+                        mCallback.onSwipeRight(mView);
                     }
                     else {
-                        mCallback.onSwipeLeft(mView, swipePositions);
+                        mCallback.onSwipeLeft(mView);
                     }
 
 

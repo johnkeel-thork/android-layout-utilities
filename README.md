@@ -2,7 +2,7 @@
 Some still relevant utility classes for Android Java
 
 ## SwipeListViewTouchListener.java
-Make your ListView entries swipe-able.
+Make your ListView entries swipeable.
 Copy file to your project and in your activity add the listener to your ListView like this:
 
 ```

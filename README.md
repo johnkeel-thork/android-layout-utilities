@@ -3,6 +3,7 @@ Some still relevant utility classes for Android Java
 
 ## SwipeListViewTouchListener.java
 Make your ListView entries swipeable.
+
 Copy file to your project and in your activity add the listener to your ListView like this:
 
 ```
@@ -27,6 +28,7 @@ YOURLISTVIEW.setOnScrollListener(touchListener.makeScrollListener());
 
 ## SwipeViewTouchListener.java
 Just like the SwipListView but this one can be used with any view.
+
 Copy file to your project and in your activity add the listener to your View like this:
 
 ```
@@ -53,7 +55,9 @@ YOURVIEW.setOnTouchListener(touchListener);
 ## TextStroke.java
 TextView with stroke around the text
 Copy file to your code, plus the file res/values/attrs.xml
+
 Use it in any of your layouts xml files, like the example at res/layout/text_stroke_example.xml
+
 Change "com.thorkracing.dmd2_utils.TextStroke" to the path where you copied the TextStroke.java file
 
 ```

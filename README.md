@@ -49,3 +49,35 @@ SwipeViewTouchListener touchListener =
 
 YOURVIEW.setOnTouchListener(touchListener);
 ```
+
+## TextStroke.java
+TextView with stroke around the text
+Copy file to your code, plus the file res/values/attrs.xml
+Use it in any of your layouts xml files, like the example at res/layout/text_stroke_example.xml
+Change "com.thorkracing.dmd2_utils.TextStroke" to the path where you copied the TextStroke.java file
+
+```
+<com.thorkracing.dmd2_utils.TextStroke
+        android:id="@+id/title_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:focusable="false"
+        android:gravity="center"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:text="TESTING TEXT"
+        android:textAlignment="gravity"
+        android:textColor="@color/accent"
+        app:autoSizeMaxTextSize="80sp"
+        app:autoSizeMinTextSize="18sp"
+        app:autoSizeStepGranularity="0.1sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stroke_color="@color/white"
+        app:stroke_width="8" />
+```
